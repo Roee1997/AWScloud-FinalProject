@@ -29,3 +29,13 @@ $(document).on("click", '[data-toggle="lightbox"]', function (event) {
     event.preventDefault();
     $(this).ekkoLightbox();
 });
+
+document.getElementById("bookingForm").addEventListener("submit", function (event) {
+    const checkIn = new Date(document.getElementById("checkIn").value);
+    const checkOut = new Date(document.getElementById("checkOut").value);
+
+    if (checkIn >= checkOut) {
+        alert("????? ?????? ???? ????? ???? ????? ?????.");
+        event.preventDefault(); // ????? ????? ?????
+    }
+});
