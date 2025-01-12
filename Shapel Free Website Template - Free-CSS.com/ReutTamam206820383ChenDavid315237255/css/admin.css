@@ -1,0 +1,58 @@
+/* עיצוב כללי */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* כותרת */
+header {
+    text-align: center;
+    margin: 20px;
+}
+
+/* עיצוב תוכן */
+.content {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+/* עיצוב טבלאות */
+table {
+    width: 45%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* עיצוב רספונסיבי */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table {
+        width: 80%;
+    }
+}
