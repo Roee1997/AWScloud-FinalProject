@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html dir="rtl" >
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" href="images/כתר.png" type="image/gif" />
+
+    <title>מלון על האגם</title>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
+
+    <!-- lightbox Gallery-->
+    <link rel="stylesheet" href="css/ekko-lightbox.css" />
+
+    <!-- font awesome style -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+
+
+    <style>
+        #successMessage {
+            color: white;
+        }
+
+        #errorMessage {
+            color: red;
+        }
+
+        .vertical-text {
+            writing-mode: sideways-rl;
+        }
+
+        .heText {
+            text-align: right;
+            direction: rtl;
+        }
+
+        .ceText {
+            text-align: center;
+            direction: rtl;
+        }
+
+        .st {
+            font-family: 'David';
+        }
+
+        .sT {
+            font-family: 'FrankRuehl';
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- header section strats -->
+    <header class="header_section">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container">
+              
+                <div class="" id="">
+
+                    <div class="custom_menu-btn">
+                        <button onclick="openNav()">
+                            <span class="s-1"> </span>
+                            <span class="s-2"> </span>
+                            <span class="s-3"> </span>
+                        </button>
+                        <div id="myNav" class="overlay">
+                            <div class="overlay-content">
+                                <a href="index.html">דף הבית</a>
+                                <a href="about.html">קצת עלינו</a>
+                                <a href="gallery.html">גלריה</a>
+                                <a href="service.html">אטרקציות באזור</a>
+                                <a href="blog.html">מתקני המלון</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="slider_section position-relative">
+        <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="img_container">
+                        <div class="img-box">
+                            <img src="images/תמונה - הסיפור שלנו.jpg" />
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="img_container">
+                        <div class="img-box">
+                            <img src="images/חוץ כביש.jpg" />
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="img_container">
+                        <div class="img-box">
+                            <img src="images/מלמעלה.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel_btn_box">
+                <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
+                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <div class="detail-box">
+            <div class="col-md-8 col-lg-6 mx-auto">
+                <div class="inner_detail-box">
+                    <h1  >
+                         על האגם 
+
+                    </h1>
+                    <h3 class="st"> כשיוקרה וטבע נפגשים...</h3>
+                    <p>
+                        ברוכים הבאים למקום בו תמצאו את החופשה המושלמת בשבילך.. <br />
+                        בפינה מבודדת באיזור הצפון,תהנו מהמקום בו הטבע והקלאס נפגשים
+                        <br />
+                        *למעוניינים בהזמנת חדר נא ליצור קשר
+
+                    </p>
+                    <div>
+                        <a href="#contact" class="slider-link">
+                            צור קשר
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end slider section -->
+    <!-- about section -->
+
+    <section class="about_section layout_padding ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="img-box">
+                        <img src="images/תמונה - הסיפור שלנו.jpg" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="detail-box">
+                        <div class="heading_container">
+                            <h2>
+                                קצת עלינו
+                            </h2>
+                        </div>
+                        <p class="heText">
+                            ברוכים הבאים למלון "על האגם" מושב מגדל,
+                            המקום בו תוכלו לחוות את האזור השליו של הצפון, ולהנות כל בוקר מהנוף העוצר נשימה של הכינרת.
+                            כשהוא שואב השראה מסביבתו, על האגם משלב תחכום מודרני ויוקרה מסורתית, הניכרים מחללי הפנים האלגנטיים,
+                            דרך החדרים המודרניים ועד הנופים מסביב. אנו מזמינים אתכם להנות מחוויה עוצרת נשימה.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end about section -->
+    <!-- gallery section -->
+
+    <div class="gallery_section layout_padding2">
+        <div class="container-fluid">
+            <div class="heading_container heading_center">
+                <h2>
+                    גלריה
+                </h2>
+            </div>
+            <div class="row">
+              <div class=" col-sm-8 col-md-6 px-0">
+                <div class="img-box">
+                    <img src="images/בריכה.jpg" width="634" height="365"/>
+                  <a href="images/בריכה.jpg" data-toggle="lightbox" data-gallery="gallery">
+                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-4 col-md-3 px-0">
+                <div class="img-box">
+                    <img src="images/מנגל.jpg" width="317" height="365" />
+                  <a href="images/מנגל.jpg" data-toggle="lightbox" data-gallery="gallery">
+                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3 px-0">
+                <div class="img-box">
+                    <img src="images/מהצד מרפסות.jpg" width="317" height="365" />
+                  <a href="images/מהצד מרפסות.jpg" data-toggle="lightbox" data-gallery="gallery">
+                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3 px-0">
+                <div class="img-box">
+                    <img src="images/מאחורה רכב .jpg" width="317" height="365"/>
+                  <a href="images/מאחורה רכב .jpg" data-toggle="lightbox" data-gallery="gallery">
+                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-4 col-md-3 px-0">
+                  <div class="img-box">
+                      <img src="images/מקדימה.jpg" width="317" height="365" /> 
+                      <a href="images/מקדימה.jpg" data-toggle="lightbox" data-gallery="gallery">
+                          <i class="fa fa-picture-o" aria-hidden="true"></i>
+                      </a>
+                  </div>
+              </div>
+              <div class="col-sm-8 col-md-6 px-0">
+                <div class="img-box">
+                    <img src="images/חוץ צד.jpg" width="634" height="365" />
+                  <a href="images/חוץ צד.jpg" data-toggle="lightbox" data-gallery="gallery">
+                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- end gallery section -->
+    <!-- service section -->
+
+    <section class="service_section layout_padding">
+        <div class="container">
+            <div class="heading_container heading_center">
+                <h2>
+                    אטרקציות בסביבה
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mx-auto">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="images/Arbel.jpg" width="145" height="111" />
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                שמורת טבע ארבל
+                            </h5>
+                            <p>
+
+                                מצוק הארבל, המתנוסס מעל הכנרת, משקיף לגולן לחרמון ולהרי הגליל ומהווה את לבה של שמורת הטבע ארבל, ואת הגן הלאומי ארבל המקיף אותה. הגן הלאומי ושמורת טבע ארבל כוללים גם את הר ניתאי, הר סביון, נחל ארבל וכן שני יישובים קדומים שהותירו שרידי שני בתי כנסת מפוארים .
+                            </p>
+                            <br />
+                            <br />
+                            <a href="https://www.parks.org.il/reserve-park/arbel/">
+                                ביקור באתר
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mx-auto">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="images/ספורט ימי בננה.jpg" width="145" height="111" />
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                ספורט ימי
+                            </h5>
+                            <p>
+                                ממש במרחק כמה דקות נסיעה תוכלו להנות ממגוון פעילויות ספורט ימי אטרקטיביות לזוגות, משפחות וקבוצות בסירות סקי, טורנדו, סירות נהיגה עצמית, אופנועי ים, קייאקים, סאפ, בננות ספורטיביות ואבובים בשלל גדלים וסוגים.
+                            </p>
+                            <br />
+                            <br />
+                            <br />
+
+                            <a href="https://www.tripadvisor.co.il/Attraction_Review-g1759678-d9716071-Reviews-Halom_Olami-Migdal_Galilee_Region_Northern_District.html">
+                                ביקור באתר
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mx-auto">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="images/טרקטורונים.jpg" />
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                טיולי שטח
+                            </h5>
+                            <p>
+                                אם אתם בקטע של להרגיש את הטבע מקרוב,והאדרנלין זורם לכם בטבעיות-טיול שטח הינו האטרקציה האולטימטיבית בשבילכם.באתר תוכלו לטייל לאורך שביל הנחש המפותל, דרך שלוליות בוץ ועליות חדות. ניתן לבצע את הטיול על רייזרים,טרקטרונים,ג'יפים ועוד.
+                            </p>
+                            <br />
+                            <br />
+                            <a href="http://www.tracktoronim4u.co.il/he/cards/city.asp?cityID=5">
+                                ביקור באתר
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- end service section -->
+    <!-- blog section -->
+
+    <section class="blog_section layout_padding">
+        <div class="container-fluid">
+            <div class="heading_container">
+                <h2>
+                    מתקני המלון
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 ">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="images/מנגל.jpg" width="225" height="253" />
+                        </div>
+                        <div class="detail-box heText" >
+
+                            <ul>
+                                <li>מטבח מאובזר</li>
+                                <li>חדר כביסה </li>
+                                <li>WI-FI במתחם</li>
+                                <li>פינות ישיבה </li>
+                                <li>עמדת מנגל </li>
+                                <li>בריכה </li>
+                                <li>נגישות לבעלי מוגבלויות </li>
+
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 ">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="images/בריכה.jpg" width="225" height="253" />
+                        </div>
+                        <div class="detail-box heText">
+
+                            <ul>
+                                <li>ג'קוזי  </li>
+                                <li>מיטות שיזוף  </li>
+                                <li>אולם אירועים במלון </li>
+                                <li> סאונה יבשה</li>
+                                <li>סאונה רטובה</li>
+                                <li>חניון</li>
+                                <li>חדרים ללא עישון</li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end blog section -->
+    <!-- client section -->
+
+    <section class="client_section layout_padding">
+        <div class="container">
+            <div class="heading_container">
+                <h2>
+                    ביקורות
+                </h2>
+            </div>
+            <div id="carouselExample2Controls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-11 col-lg-10 mx-auto">
+                                <div class="box">
+                                    <div class="img-box">
+                                        <img src="images/אלמוג שושן חדש.png" />
+                                    </div>
+                                    <div class="detail-box">
+                                        <div class="name">
+                                            <h6>
+                                                אלמוג שושן ★★★★★
+                                            </h6>
+                                        </div>
+                                        <p class="heText">
+                                            ללא ספק אחזור למלון הזה שוב.
+                                            השירות האדיב שניתן לנו בקבלה הוא ללא ספק מעל המצופה,הדירות נקיות להפליא והמתקנים שהמלון מציע גורמים לך
+                                            לא לרצות לעזוב את המתחם.
+                                        </p>
+                                        <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-11 col-lg-10 mx-auto">
+                                <div class="box">
+                                    <div class="img-box">
+                                        <img src="images/לירון חזיזה חדש .png" />
+                                    </div>
+                                    <div class="detail-box">
+                                        <div class="name">
+                                            <h6>
+                                                לירון חזיזה ★★★★★
+                                            </h6>
+                                        </div>
+                                        <p class="heText">
+                                            סגרנו את הסוויטה למסיבת רווקות,
+                                            הסוויטה מבודדת מרעש ולכן לא הטרדנו את השכנים.
+                                            כשהבעלים שמעו את סיבת הביקור שלנו הם הפתיעו ופינקו אותנו בשמפניה ופלטת פירות טריים.
+                                            ממליצה בהחלט!
+                                        </p>
+                                        <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-11 col-lg-10 mx-auto">
+                                <div class="box">
+                                    <div class="img-box">
+                                        <img src="images/אבנר רוזנשטיין חדש.png" />
+                                    </div>
+                                    <div class="detail-box">
+                                        <div class="name">
+                                            <h6>
+                                                אבנר רוזנשטיין ★★★★☆
+                                            </h6>
+                                        </div>
+                                        <p class="heText">
+
+                                            המיקום של המלון פשוט נהדר! רק כרבע שעה מהכנרת,
+                                            ומגוון אטרקציות נמצאים בסביבה.הנכדים נהנו מאוד ממתקני המלון
+                                        </p>
+                                        <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel_btn-container">
+                    <a class="carousel-control-next" href="#carouselExample2Controls" role="button" data-slide="next">
+                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    <a class="carousel-control-prev" href="#carouselExample2Controls" role="button" data-slide="prev">
+                        <i class="fa fa-long-arrow-left " aria-hidden="true"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end client section -->
+    <!-- contact section -->
+    <section class="contact_section " id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-lg-6 ">
+                    <div class="form_container">
+                        <div class="heading_container ">
+                            <h2>
+                                צרו קשר
+                            </h2>
+                        </div>
+                        <form action="">
+                            <div>
+                                <input type="text" id="nameInput"  placeholder="*שם המזמין" />
+                            </div>
+                            <div>
+                                <input type="text" id="phoneInput"  placeholder="*מספר טלפון" />
+                            </div>
+                            <div>
+                                <input type="email" id="emailInput"  placeholder="*מייל" />
+                            </div>
+                            <div>
+                                <input type="text" class="message-box" placeholder="בקשות מיוחדות" />
+                            </div>
+                            <div class="btn_box">
+                                <button type="button" onclick="submitForm()">
+                                    שלח
+                                </button>
+                            </div>
+                        </form>
+                        <div id="successMessage"></div>
+                        <div id="errorMessage"></div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-6">
+
+                    <div class="subscribe-box ceText">
+                        <h3>
+                            עקוב אחרינו למבצעים חמים
+                        </h3>
+                        <p class="heText">
+                            רוצה לקבל הודעות ראשוניות על מבצעים אצלנו באתר? רשום את האימייל שלך ואנו נדאג לשלוח לך ישירות הודעה בכל פעם שיעלה מבצע שווה לאתר.
+                        </p>
+                        <form action="">
+                            
+                            <input type="email" placeholder="הכנס את המייל">
+                            <button type="button" onclick="subscribe()">
+                                עקוב אחר מבצעים
+                            </button>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end contact section -->
+    <!-- info section -->
+    <section class="info_section ">
+        <div class="container">
+            <div class="row info_main_row " >
+                <div class="col-md-6 col-lg-3">
+                    <div class="info_insta ceText  ">
+                        <h4>
+                          על האגם 
+                        </h4>
+                        <p class="mb-0 heText ">
+                            המקום שבו שלווה , רוגע וטבע נפגשים.
+                            מלון "על האגם" הינו מלון דירות, המספק מגוון שירותים לצד לוקיישן מפתיע.
+                            "על האגם" מספק את החווית הרוגע האולטימטיבית עבור משפחות וזוגות,ומספק מרחב לאירועים פרטיים.
+
+
+
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="info_detail ceText">
+                        <h4>
+                            קצת על החברה
+                        </h4>
+                        <p class="mb-0  heText">
+                            חברת "TAMAM" הינה חברת קבלנות הנחשבת בין הטובות בשוק,
+                            אשר סיפקה פרוייקטים מצליחים ונרחבים ברחבי הארץ.
+                            חברת "TAMAM" בעלת ניסיון נרחב של כ-30 שנים בתחום הבנייה והקבלנות.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 ceText ">
+                    <h4>
+                        צור קשר
+                    </h4>
+                    <div class="info_contact heText ">
+                        <a href="https://www.google.com/maps?q=מושבה מגדל" target="_blank">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <span>
+                                כתובת: מושבה מגדל
+                            </span>
+                        </a>
+                        <a href="https://waze.com/ul?q=מושבה מגדל" target="_blank">
+                            <i>
+                                <img src="images/וויז.png" alt="Waze" style="width: 20px; height: 20px;">
+
+                            </i>
+                            <span>
+                                נווט ב-Waze
+                            </span>
+                        </a>
+                        <a href="tel:+972505311443">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <span>
+                                פלאפון : 050-5311443
+                            </span>
+                        </a>
+                        <a href="mailto:NadavTamam@info.com">
+                            <i class="fa fa-envelope"></i>
+                            <span>
+                                NadavTamam@info.com
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 ceText ">
+                    <h4>
+                        סוגי אירוח
+                    </h4>
+                    <div class="social_box heText" >
+                        <ul>
+                            <li>אירוח כפרי</li>
+                            <li>חדרי בוטיק</li>
+                            <li>דירות נופש למסיבת רווקים</li>
+                            <li>דירות נופש למשפחות</li>
+                            <li>דירות עם בריכה פרטית</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end info_section -->
+    <!-- footer section -->
+    <footer class="footer_section">
+        <div class="container">
+            <p>
+                &copy; <span id="displayYear"></span> All Rights Reserved By
+                <a href="https://html.design/">Free Html Templates</a>
+            </p>
+        </div>
+    </footer>
+    <!-- footer section -->
+    <!-- jQery -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.js"></script>
+    <!-- lightbox Gallery-->
+    <script src="js/ekko-lightbox.min.js"></script>
+    <!-- custom js -->
+    <script src="js/custom.js"></script>
+   
+
+
+
+
+    <!--עיצוב לכפתורים שירעננו את הדף-->
+    <script>
+        function submitForm() {     ///זה של שלח
+            // Add your form submission logic here
+            document.querySelector(".form_container input[type='email']").value = '';
+        }
+
+        function subscribe() { //זה של המבצעים
+            // Add your subscribe logic here
+
+            // Clear the email input after subscription
+            document.querySelector(".subscribe-box input[type='email']").value = '';
+        }
+
+
+
+
+
+        /* לשלוח למשתמש הודעה */
+
+
+        function submitForm() {
+
+            var name = document.getElementById('nameInput').value.trim();
+            var phone = document.getElementById('phoneInput').value.trim();
+            var email = document.getElementById('emailInput').value.trim();
+
+
+            // בודק האם הנתונים האלה ריקים
+            if (name !== '' && phone !== '' && email !== '') {
+
+                var formData = new FormData(document.querySelector(".form_container form"));
+
+
+                var successMessage = "הפרטים נרשמו בהצלחה!";
+                displayMessage(successMessage, 'success');
+
+
+                document.querySelector(".form_container form").reset();
+            } else {
+                var errorMessage = "נא מלא את הפרטים החשובים";
+                displayMessage(errorMessage, 'error');
+            }
+        }
+
+        function subscribe() {
+
+            var email = document.querySelector(".subscribe-box input[type='email']").value;
+
+            if (email !== "") {
+                var formData = new FormData(document.querySelector(".form_container form"));
+
+
+                var successMessage = "הפרטים נרשמו בהצלחה!";
+                displayMessage(successMessage, 'success');
+
+
+                document.querySelector(".subscribe-box form").reset();
+
+            } else {
+                var errorMessage = "נא מלא מייל";
+                displayMessage(errorMessage, 'error');
+
+            }
+        }
+
+        function displayMessage(message, type) {
+            var messageElement;
+            if (type === 'success') {
+                messageElement = document.getElementById('successMessage');
+            } else {
+                messageElement = document.getElementById('errorMessage');
+            }
+
+
+            messageElement.innerHTML = message;
+            messageElement.style.display = 'block'; // Show the message
+
+            // פונקציה להסתרת ההודעה
+            setTimeout(function () {
+                messageElement.innerHTML = '';
+                messageElement.style.display = 'none'; // ימחק את ההודעה לאחר 5 שניות
+            }, 5000);
+        }
+
+       
+           
+    
+
+      
+    </script>
+
+</body>
+
+</html>
