@@ -1,48 +1,75 @@
 /* עיצוב כללי */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f9;
+    background-color: #f8f9fa;
     margin: 0;
     padding: 0;
+    color: #333;
+    line-height: 1.6;
 }
 
 /* כותרת */
 header {
     text-align: center;
-    margin: 20px;
+    background: linear-gradient(90deg, #3a6073, #16222a);
+    color: white;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
 }
 
 /* עיצוב תוכן */
 .content {
     display: flex;
     justify-content: space-around;
+    gap: 20px;
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* עיצוב טבלאות */
 table {
-    width: 45%;
+    width: 100%;
     border-collapse: collapse;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 }
 
 table, th, td {
-    border: 1px solid #ddd;
+    border: none;
 }
 
 th, td {
-    padding: 12px;
+    padding: 15px;
     text-align: left;
 }
 
 th {
-    background-color: #4CAF50;
+    background-color: #3a6073;
     color: white;
+    font-size: 1.2em;
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #e8f4f8;
+    transition: background-color 0.3s ease;
+}
+
+td {
+    font-size: 1em;
+    color: #555;
 }
 
 /* עיצוב רספונסיבי */
@@ -50,9 +77,15 @@ tr:nth-child(even) {
     .content {
         flex-direction: column;
         align-items: center;
+        gap: 30px;
     }
 
     table {
-        width: 80%;
+        width: 90%;
+    }
+
+    th, td {
+        font-size: 0.9em;
+        padding: 10px;
     }
 }
