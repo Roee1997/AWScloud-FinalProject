@@ -1,48 +1,43 @@
-// האזנה לטופס התחברות
-document.getElementById("loginForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // מניעת ריענון דף
+// Cognito Login URL
+const cognitoLoginUrl =
+    'https://us-east-1u8diopodh.auth.us-east-1.amazoncognito.com/login?client_id=1hfg4usrg0a6lr0393nmnia1vq&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%3A5500%2Findex.html';
 
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
+/**
+ * Redirect user to Cognito login page when clicking the login button
+ */
+const redirectToCognitoLogin = () => {
+    window.location.href = cognitoLoginUrl;
+};
 
-    // בדיקה מול מסד נתונים (שלב זה מדמה קריאה ל-API)
-    fetch("https://api.your-endpoint.com/login", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ username, password })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            if (data.isAdmin) {
-                // אם המשתמש הוא מנהל
-                window.location.href = "admin.html"; // הפניה לדף ניהול
-            } else {
-                alert("ברוך הבא! אין לך הרשאות מנהל.");
-            }
-        } else {
-            alert("שם משתמש או סיסמה שגויים.");
-        }
-    })
-    .catch(error => console.error("Error:", error));
-});
-// הצגת ה-modal
-const loginButton = document.getElementById("loginButton");
-const loginModal = document.getElementById("loginModal");
-const closeButton = document.querySelector(".close");
+/**
+ * Parse tokens from URL after Cognito login redirect
+ */
+const parseTokensFromUrl = () => {
+    const hash = window.location.hash.substring(1); // Get the part after the `#`
+    const params = new URLSearchParams(hash);
 
-loginButton.addEventListener("click", function () {
-    loginModal.style.display = "flex"; // הצגת ה-modal
-});
+    const accessToken = params.get('access_token');
+    const idToken = params.get('id_token');
+    const expiresIn = params.get('expires_in');
+    const tokenType = params.get('token_type');
 
-closeButton.addEventListener("click", function () {
-    loginModal.style.display = "none"; // סגירת ה-modal
-});
+    if (accessToken && idToken) {
+        console.log('Access Token:', accessToken);
+        console.log('ID Token:', idToken);
 
-window.addEventListener("click", function (event) {
-    if (event.target === loginModal) {
-        loginModal.style.display = "none"; // סגירה בלחיצה מחוץ לחלון
+        // Store tokens securely (consider using HttpOnly cookies for sensitive apps)
+        localStorage.setItem('accessToken', accessToken);
+        localStorage.setItem('idToken', idToken);
+
+        // Optionally, redirect to a dashboard or display user information
+        alert('Login successful!');
+    } else {
+        console.warn('No tokens found in the URL.');
     }
-});
+};
+
+// Event listener for the login button
+document.getElementById('loginButton').addEventListener('click', redirectToCognitoLogin);
+
+// Call the token parsing function when the page loads
+window.onload = parseTokensFromUrl;
