@@ -3,16 +3,33 @@ const cognitoLoginUrl =
     'https://us-east-1u8diopodh.auth.us-east-1.amazoncognito.com/login?client_id=1hfg4usrg0a6lr0393nmnia1vq&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%3A5500%2Findex.html';
 
 /**
- * Redirect user to Cognito login page when clicking the login button
+ * Redirect user to Cognito login page
  */
 const redirectToCognitoLogin = () => {
     window.location.href = cognitoLoginUrl;
 };
 
 /**
- * Decode a JWT token (header and payload)
+ * Logout user
+ * Clears all user-related data from localStorage and reloads the page
  */
-const decodeJwtToken = (token) => {
+const logoutUser = () => {
+    // Clear all user-related keys
+    localStorage.removeItem('userInfo'); // Remove the userInfo object
+    localStorage.clear(); // Optionally clear all storage if it's only for this app
+
+    // Log for debugging
+    console.log('All user-related data removed from localStorage.');
+
+    // Show confirmation and reload page
+    alert('You have been logged out.');
+    location.reload(); // Reload the page to update UI
+};
+
+/**
+ * Decode a JWT token (extract payload)
+ */
+const decodeJwtPayload = (token) => {
     const parts = token.split('.');
     if (parts.length !== 3) {
         console.error('Invalid token format');
@@ -20,55 +37,81 @@ const decodeJwtToken = (token) => {
     }
 
     try {
-        const header = JSON.parse(atob(parts[0]));
-        const payload = JSON.parse(atob(parts[1]));
-        return { header, payload };
+        return JSON.parse(atob(parts[1]));
     } catch (e) {
-        console.error('Error decoding token:', e);
+        console.error('Error decoding token payload:', e);
         return null;
     }
 };
 
 /**
- * Parse tokens from URL after Cognito login redirect and decode them
+ * Parse tokens from URL and save user info
  */
 const parseTokensFromUrl = () => {
-    const hash = window.location.hash.substring(1); // Get the part after the `#`
+    const hash = window.location.hash.substring(1); // Get the part after `#`
+    if (!hash) return;
+
     const params = new URLSearchParams(hash);
 
     const accessToken = params.get('access_token');
     const idToken = params.get('id_token');
 
     if (accessToken && idToken) {
-        console.log('Access Token:', accessToken);
-        console.log('ID Token:', idToken);
+        // Decode ID Token payload
+        const idTokenPayload = decodeJwtPayload(idToken);
 
-        // Decode and display tokens
-        const decodedAccessToken = decodeJwtToken(accessToken);
-        const decodedIdToken = decodeJwtToken(idToken);
+        if (idTokenPayload) {
+            // Save user info in localStorage
+            const userInfo = {
+                name: idTokenPayload.name,
+                email: idTokenPayload.email,
+                username: idTokenPayload["cognito:username"],
+                rawIdTokenPayload: idTokenPayload, // Optional: Full decoded ID token payload
+            };
 
-        if (decodedAccessToken) {
-            console.log('Decoded Access Token:', decodedAccessToken);
-            localStorage.setItem('accessTokenPayload', JSON.stringify(decodedAccessToken.payload));
+            localStorage.setItem('userInfo', JSON.stringify(userInfo));
+
+            // Log user info to the console
+            console.log('User Info:', userInfo);
+            alert('Login successful!');
+            
+            // Clear the hash to prevent reprocessing on reload
+            window.history.replaceState({}, document.title, window.location.pathname);
+        } else {
+            console.warn('Failed to decode ID Token payload.');
         }
-
-        if (decodedIdToken) {
-            console.log('Decoded ID Token:', decodedIdToken);
-            localStorage.setItem('idTokenPayload', JSON.stringify(decodedIdToken.payload));
-        }
-
-        // Store tokens securely (temporarily using localStorage for demonstration)
-        localStorage.setItem('accessToken', accessToken);
-        localStorage.setItem('idToken', idToken);
-
-        alert('Login successful! Tokens decoded and stored.');
-    } else {
-        console.warn('No tokens found in the URL.');
     }
 };
 
-// Event listener for the login button
-document.getElementById('loginButton').addEventListener('click', redirectToCognitoLogin);
+/**
+ * Update UI based on user authentication status
+ */
+const updateUI = () => {
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    const authContainer = document.getElementById('authContainer');
 
-// Call the token parsing function when the page loads
-window.onload = parseTokensFromUrl;
+    if (userInfo) {
+        // User is logged in
+        authContainer.innerHTML = `
+            <span>Welcome, ${userInfo.username}</span>
+            <button id="logoutButton">Logout</button>
+        `;
+
+        // Attach logout event
+        document.getElementById('logoutButton').addEventListener('click', logoutUser);
+    } else {
+        // User is not logged in
+        authContainer.innerHTML = `
+            <button id="loginButton">Login</button>
+        `;
+
+        // Attach login event
+        document.getElementById('loginButton').addEventListener('click', redirectToCognitoLogin);
+    }
+};
+
+// Parse tokens on page load
+window.onload = () => {
+    parseTokensFromUrl();
+    updateUI();
+};
