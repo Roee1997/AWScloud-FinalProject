@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="rtl" >
+<html dir="rtl">
 
 <head>
     <!-- Basic -->
@@ -13,6 +13,7 @@
     <meta name="author" content="" />
     <link rel="icon" href="images/כתר.png" type="image/gif" />
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/index.css">
 
     <title>מלון על האגם</title>
 
@@ -73,7 +74,7 @@
     <header class="header_section">
         <div class="container-fluid">
             <nav class="navbar navbar-expand-lg custom_nav-container">
-              
+
                 <div class="" id="">
 
                     <div class="custom_menu-btn">
@@ -96,10 +97,10 @@
             </nav>
         </div>
     </header>
- <!-- כפתור התחברות -->
-<div id="authContainer"></div>
+    <!-- כפתור התחברות -->
+    <div id="authContainer"></div>
 
-  
+
     <!-- end header section -->
     <!-- slider section -->
     <section class="slider_section position-relative">
@@ -141,8 +142,8 @@
         <div class="detail-box">
             <div class="col-md-8 col-lg-6 mx-auto">
                 <div class="inner_detail-box">
-                    <h1  >
-                         על האגם 
+                    <h1>
+                        על האגם
 
                     </h1>
                     <h3 class="st"> כשיוקרה וטבע נפגשים...</h3>
@@ -175,7 +176,7 @@
                 </div>
                 <div class="booking-container">
                     <h2>הזמן את החופשה שלך</h2>
-                    <form id="bookingForm" action="/submit_booking" method="POST">
+                    <form id="bookingForm">
                         <div class="form-group">
                             <label for="checkIn">תאריך הגעה:</label>
                             <input type="date" id="checkIn" name="checkIn" required>
@@ -188,25 +189,29 @@
                             <label for="guests">כמות משתתפים:</label>
                             <input type="number" id="guests" name="guests" min="1" max="10" required>
                         </div>
-                        <button type="submit" class="booking-button">הזמן עכשיו</button>
+                        <button type="button" id="bookNowButton" class="booking-button">הזמן עכשיו</button>
                     </form>
+                    
                 </div>
-                    <div class="detail-box">
-                        <div class="heading_container">
-                            <h2>
-                                קצת עלינו
-                            </h2>
-                        </div>
-                        <p class="heText">
-                            ברוכים הבאים למלון "על האגם" מושב מגדל,
-                            המקום בו תוכלו לחוות את האזור השליו של הצפון, ולהנות כל בוקר מהנוף העוצר נשימה של הכינרת.
-                            כשהוא שואב השראה מסביבתו, על האגם משלב תחכום מודרני ויוקרה מסורתית, הניכרים מחללי הפנים האלגנטיים,
-                            דרך החדרים המודרניים ועד הנופים מסביב. אנו מזמינים אתכם להנות מחוויה עוצרת נשימה.
-                        </p>
-
+                <!-- Hidden div for room details -->
+                <div id="roomDetails" style="display: none;" class="room-details"></div>
+                <div class="detail-box">
+                    <div class="heading_container">
+                        <h2>
+                            קצת עלינו
+                        </h2>
                     </div>
+                    <p class="heText">
+                        ברוכים הבאים למלון "על האגם" מושב מגדל,
+                        המקום בו תוכלו לחוות את האזור השליו של הצפון, ולהנות כל בוקר מהנוף העוצר נשימה של הכינרת.
+                        כשהוא שואב השראה מסביבתו, על האגם משלב תחכום מודרני ויוקרה מסורתית, הניכרים מחללי הפנים
+                        האלגנטיים,
+                        דרך החדרים המודרניים ועד הנופים מסביב. אנו מזמינים אתכם להנות מחוויה עוצרת נשימה.
+                    </p>
+
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -221,54 +226,54 @@
                 </h2>
             </div>
             <div class="row">
-              <div class=" col-sm-8 col-md-6 px-0">
-                <div class="img-box">
-                    <img src="images/בריכה.jpg" width="634" height="365"/>
-                  <a href="images/בריכה.jpg" data-toggle="lightbox" data-gallery="gallery">
-                    <i class="fa fa-picture-o" aria-hidden="true"></i>
-                  </a>
+                <div class=" col-sm-8 col-md-6 px-0">
+                    <div class="img-box">
+                        <img src="images/בריכה.jpg" width="634" height="365" />
+                        <a href="images/בריכה.jpg" data-toggle="lightbox" data-gallery="gallery">
+                            <i class="fa fa-picture-o" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
-              </div>
-              <div class="col-sm-4 col-md-3 px-0">
-                <div class="img-box">
-                    <img src="images/מנגל.jpg" width="317" height="365" />
-                  <a href="images/מנגל.jpg" data-toggle="lightbox" data-gallery="gallery">
-                    <i class="fa fa-picture-o" aria-hidden="true"></i>
-                  </a>
+                <div class="col-sm-4 col-md-3 px-0">
+                    <div class="img-box">
+                        <img src="images/מנגל.jpg" width="317" height="365" />
+                        <a href="images/מנגל.jpg" data-toggle="lightbox" data-gallery="gallery">
+                            <i class="fa fa-picture-o" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
-              </div>
-              <div class="col-sm-6 col-md-3 px-0">
-                <div class="img-box">
-                    <img src="images/מהצד מרפסות.jpg" width="317" height="365" />
-                  <a href="images/מהצד מרפסות.jpg" data-toggle="lightbox" data-gallery="gallery">
-                    <i class="fa fa-picture-o" aria-hidden="true"></i>
-                  </a>
+                <div class="col-sm-6 col-md-3 px-0">
+                    <div class="img-box">
+                        <img src="images/מהצד מרפסות.jpg" width="317" height="365" />
+                        <a href="images/מהצד מרפסות.jpg" data-toggle="lightbox" data-gallery="gallery">
+                            <i class="fa fa-picture-o" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
-              </div>
-              <div class="col-sm-6 col-md-3 px-0">
-                <div class="img-box">
-                    <img src="images/מאחורה רכב .jpg" width="317" height="365"/>
-                  <a href="images/מאחורה רכב .jpg" data-toggle="lightbox" data-gallery="gallery">
-                    <i class="fa fa-picture-o" aria-hidden="true"></i>
-                  </a>
+                <div class="col-sm-6 col-md-3 px-0">
+                    <div class="img-box">
+                        <img src="images/מאחורה רכב .jpg" width="317" height="365" />
+                        <a href="images/מאחורה רכב .jpg" data-toggle="lightbox" data-gallery="gallery">
+                            <i class="fa fa-picture-o" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
-              </div>
-              <div class="col-sm-4 col-md-3 px-0">
-                  <div class="img-box">
-                      <img src="images/מקדימה.jpg" width="317" height="365" /> 
-                      <a href="images/מקדימה.jpg" data-toggle="lightbox" data-gallery="gallery">
-                          <i class="fa fa-picture-o" aria-hidden="true"></i>
-                      </a>
-                  </div>
-              </div>
-              <div class="col-sm-8 col-md-6 px-0">
-                <div class="img-box">
-                    <img src="images/חוץ צד.jpg" width="634" height="365" />
-                  <a href="images/חוץ צד.jpg" data-toggle="lightbox" data-gallery="gallery">
-                    <i class="fa fa-picture-o" aria-hidden="true"></i>
-                  </a>
+                <div class="col-sm-4 col-md-3 px-0">
+                    <div class="img-box">
+                        <img src="images/מקדימה.jpg" width="317" height="365" />
+                        <a href="images/מקדימה.jpg" data-toggle="lightbox" data-gallery="gallery">
+                            <i class="fa fa-picture-o" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
-              </div>
+                <div class="col-sm-8 col-md-6 px-0">
+                    <div class="img-box">
+                        <img src="images/חוץ צד.jpg" width="634" height="365" />
+                        <a href="images/חוץ צד.jpg" data-toggle="lightbox" data-gallery="gallery">
+                            <i class="fa fa-picture-o" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -296,7 +301,9 @@
                             </h5>
                             <p>
 
-                                מצוק הארבל, המתנוסס מעל הכנרת, משקיף לגולן לחרמון ולהרי הגליל ומהווה את לבה של שמורת הטבע ארבל, ואת הגן הלאומי ארבל המקיף אותה. הגן הלאומי ושמורת טבע ארבל כוללים גם את הר ניתאי, הר סביון, נחל ארבל וכן שני יישובים קדומים שהותירו שרידי שני בתי כנסת מפוארים .
+                                מצוק הארבל, המתנוסס מעל הכנרת, משקיף לגולן לחרמון ולהרי הגליל ומהווה את לבה של שמורת
+                                הטבע ארבל, ואת הגן הלאומי ארבל המקיף אותה. הגן הלאומי ושמורת טבע ארבל כוללים גם את הר
+                                ניתאי, הר סביון, נחל ארבל וכן שני יישובים קדומים שהותירו שרידי שני בתי כנסת מפוארים .
                             </p>
                             <br />
                             <br />
@@ -316,13 +323,16 @@
                                 ספורט ימי
                             </h5>
                             <p>
-                                ממש במרחק כמה דקות נסיעה תוכלו להנות ממגוון פעילויות ספורט ימי אטרקטיביות לזוגות, משפחות וקבוצות בסירות סקי, טורנדו, סירות נהיגה עצמית, אופנועי ים, קייאקים, סאפ, בננות ספורטיביות ואבובים בשלל גדלים וסוגים.
+                                ממש במרחק כמה דקות נסיעה תוכלו להנות ממגוון פעילויות ספורט ימי אטרקטיביות לזוגות, משפחות
+                                וקבוצות בסירות סקי, טורנדו, סירות נהיגה עצמית, אופנועי ים, קייאקים, סאפ, בננות
+                                ספורטיביות ואבובים בשלל גדלים וסוגים.
                             </p>
                             <br />
                             <br />
                             <br />
 
-                            <a href="https://www.tripadvisor.co.il/Attraction_Review-g1759678-d9716071-Reviews-Halom_Olami-Migdal_Galilee_Region_Northern_District.html">
+                            <a
+                                href="https://www.tripadvisor.co.il/Attraction_Review-g1759678-d9716071-Reviews-Halom_Olami-Migdal_Galilee_Region_Northern_District.html">
                                 ביקור באתר
                             </a>
                         </div>
@@ -338,7 +348,9 @@
                                 טיולי שטח
                             </h5>
                             <p>
-                                אם אתם בקטע של להרגיש את הטבע מקרוב,והאדרנלין זורם לכם בטבעיות-טיול שטח הינו האטרקציה האולטימטיבית בשבילכם.באתר תוכלו לטייל לאורך שביל הנחש המפותל, דרך שלוליות בוץ ועליות חדות. ניתן לבצע את הטיול על רייזרים,טרקטרונים,ג'יפים ועוד.
+                                אם אתם בקטע של להרגיש את הטבע מקרוב,והאדרנלין זורם לכם בטבעיות-טיול שטח הינו האטרקציה
+                                האולטימטיבית בשבילכם.באתר תוכלו לטייל לאורך שביל הנחש המפותל, דרך שלוליות בוץ ועליות
+                                חדות. ניתן לבצע את הטיול על רייזרים,טרקטרונים,ג'יפים ועוד.
                             </p>
                             <br />
                             <br />
@@ -369,7 +381,7 @@
                         <div class="img-box">
                             <img src="images/מנגל.jpg" width="225" height="253" />
                         </div>
-                        <div class="detail-box heText" >
+                        <div class="detail-box heText">
 
                             <ul>
                                 <li>מטבח מאובזר</li>
@@ -394,8 +406,8 @@
                         <div class="detail-box heText">
 
                             <ul>
-                                <li>ג'קוזי  </li>
-                                <li>מיטות שיזוף  </li>
+                                <li>ג'קוזי </li>
+                                <li>מיטות שיזוף </li>
                                 <li>אולם אירועים במלון </li>
                                 <li> סאונה יבשה</li>
                                 <li>סאונה רטובה</li>
@@ -438,7 +450,8 @@
                                         </div>
                                         <p class="heText">
                                             ללא ספק אחזור למלון הזה שוב.
-                                            השירות האדיב שניתן לנו בקבלה הוא ללא ספק מעל המצופה,הדירות נקיות להפליא והמתקנים שהמלון מציע גורמים לך
+                                            השירות האדיב שניתן לנו בקבלה הוא ללא ספק מעל המצופה,הדירות נקיות להפליא
+                                            והמתקנים שהמלון מציע גורמים לך
                                             לא לרצות לעזוב את המתחם.
                                         </p>
                                         <i class="fa fa-quote-left" aria-hidden="true"></i>
@@ -463,7 +476,8 @@
                                         <p class="heText">
                                             סגרנו את הסוויטה למסיבת רווקות,
                                             הסוויטה מבודדת מרעש ולכן לא הטרדנו את השכנים.
-                                            כשהבעלים שמעו את סיבת הביקור שלנו הם הפתיעו ופינקו אותנו בשמפניה ופלטת פירות טריים.
+                                            כשהבעלים שמעו את סיבת הביקור שלנו הם הפתיעו ופינקו אותנו בשמפניה ופלטת פירות
+                                            טריים.
                                             ממליצה בהחלט!
                                         </p>
                                         <i class="fa fa-quote-left" aria-hidden="true"></i>
@@ -525,13 +539,13 @@
                         </div>
                         <form action="">
                             <div>
-                                <input type="text" id="nameInput"  placeholder="*שם המזמין" />
+                                <input type="text" id="nameInput" placeholder="*שם המזמין" />
                             </div>
                             <div>
-                                <input type="text" id="phoneInput"  placeholder="*מספר טלפון" />
+                                <input type="text" id="phoneInput" placeholder="*מספר טלפון" />
                             </div>
                             <div>
-                                <input type="email" id="emailInput"  placeholder="*מייל" />
+                                <input type="email" id="emailInput" placeholder="*מייל" />
                             </div>
                             <div>
                                 <input type="text" class="message-box" placeholder="בקשות מיוחדות" />
@@ -553,16 +567,17 @@
                             עקוב אחרינו למבצעים חמים
                         </h3>
                         <p class="heText">
-                            רוצה לקבל הודעות ראשוניות על מבצעים אצלנו באתר? רשום את האימייל שלך ואנו נדאג לשלוח לך ישירות הודעה בכל פעם שיעלה מבצע שווה לאתר.
+                            רוצה לקבל הודעות ראשוניות על מבצעים אצלנו באתר? רשום את האימייל שלך ואנו נדאג לשלוח לך
+                            ישירות הודעה בכל פעם שיעלה מבצע שווה לאתר.
                         </p>
                         <form action="">
-                            
+
                             <input type="email" placeholder="הכנס את המייל">
                             <button type="button" onclick="subscribe()">
                                 עקוב אחר מבצעים
                             </button>
                         </form>
-                        
+
                     </div>
                 </div>
             </div>
@@ -572,11 +587,11 @@
     <!-- info section -->
     <section class="info_section ">
         <div class="container">
-            <div class="row info_main_row " >
+            <div class="row info_main_row ">
                 <div class="col-md-6 col-lg-3">
                     <div class="info_insta ceText  ">
                         <h4>
-                          על האגם 
+                            על האגם
                         </h4>
                         <p class="mb-0 heText ">
                             המקום שבו שלווה , רוגע וטבע נפגשים.
@@ -638,7 +653,7 @@
                     <h4>
                         סוגי אירוח
                     </h4>
-                    <div class="social_box heText" >
+                    <div class="social_box heText">
                         <ul>
                             <li>אירוח כפרי</li>
                             <li>חדרי בוטיק</li>
@@ -672,6 +687,8 @@
     <!-- custom js -->
     <script src="js/custom.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/index.js"></script>
+
 
 
 
@@ -762,11 +779,11 @@
             }, 5000);
         }
 
-       
-           
-    
 
-      
+
+
+
+
     </script>
 
 </body>

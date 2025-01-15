@@ -1,0 +1,26 @@
+.room-details {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.room-card {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: calc(33.33% - 20px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.room-card h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.room-card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
